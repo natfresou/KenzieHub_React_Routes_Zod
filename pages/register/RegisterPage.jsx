@@ -5,9 +5,9 @@ import { StyledSection } from "./style";
 import { StylesButton } from "../../styles/button";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { Input, Select } from "../../components/input/index";
+import { Input, Select } from "../../src/components/input/index"
 import { api } from "../../src/services/api";
-import { formRegraZod } from "../../components/formZod/formZod";
+import { formRegraZod } from "../../src/components/formZod/formZod"
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export const RegisterPage = ({ setUsersList }) => {
@@ -119,7 +119,7 @@ export const RegisterPage = ({ setUsersList }) => {
               {errors.course_module ? (
                 <p>{errors.course_module.message}</p>
               ) : null}
-              <StylesButton type="submit" buttonBackgraund="pink">
+              <StylesButton type="submit" buttonBackgraund="cadastro">
                 Cadastrar
               </StylesButton>
             </form>

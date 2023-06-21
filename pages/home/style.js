@@ -14,7 +14,7 @@ export const StyledSection = styled.section`
 
   header {
     width: 100%;
-    max-width: 800px;
+    max-width:1000px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,7 +23,6 @@ export const StyledSection = styled.section`
     margin-top: 1.5rem;
   }
   .containner {
-    max-width: 800px;
     height: 500px;
     width: 100%;
     padding: 1rem;
@@ -44,6 +43,7 @@ export const StyledSection = styled.section`
     align-items: center;
     width: 100%;
     height: 100%;
+    max-width: 1000px;
     box-shadow: 0px 3.20867px 32.0867px -8.02168px rgba(0, 0, 0, 0.25);
     border-radius: 3.20867px;
 
@@ -51,6 +51,13 @@ export const StyledSection = styled.section`
       margin-bottom: 1rem;
     }
   }
+
+ .div_olaContainner{
+  border-top: 2px solid #212529;
+    border-bottom: 2px solid #212529;
+    width: 100%;
+    height: 100px;
+ }
   .div_ola {
     display: flex;
     flex-direction: row;
@@ -58,10 +65,9 @@ export const StyledSection = styled.section`
     align-items: center;
     flex-wrap: wrap;
     height: 80px;
-    gap: 2rem;
+    gap: 1.5rem;
     width: 100%;
-    border-top: 2px solid #212529;
-    border-bottom: 2px solid #212529;
+
   }
   form {
     display: flex;
@@ -98,5 +104,7 @@ export const StyledSection = styled.section`
 
   .sorryMsg {
     margin-top: 3rem;
+    width: 100%;
+    max-width: 1000px;
   }
 `;

@@ -3,7 +3,7 @@ import { GlobalStyles } from "../styles/globalStyles";
 import { GlobalReset } from "../styles/reset";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//oi
+
 function App() {
   return (
     <>

@@ -33,6 +33,13 @@ export const ButtonStyles = css`
           width: 4.25rem;
           height: 40px;
         `;
+        case "cadastro":
+        return css`
+          background: #59323F;
+          border: 1.2182px solid #59323F;
+          width: 100%;
+          height: 45px;
+        `;
     }
   }}
 `;

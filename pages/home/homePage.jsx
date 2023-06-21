@@ -30,13 +30,16 @@ export const HomePage = ({ user }) => {
           </StylesButton>
         </header>
         <div className="div_caixa">
+          <div className="div_olaContainner">
           <div className="div_ola">
             <StyledHeading1> Olá, {name}</StyledHeading1>
             <StyledHeading2>{modulo}</StyledHeading2>
           </div>
+          </div>
+          
           <div className="sorryMsg">
             <StyledHeading1>
-              Que pena! Estamos em desenvolvimento...
+              Que pena! Estamos em desenvolvimento {":("}
             </StyledHeading1>
             <StyledHeading>
               Nossa Aplicação está em desenvolvimento, em breve teremos

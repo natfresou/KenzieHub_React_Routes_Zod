@@ -8,7 +8,7 @@ import {
 import { StyledSection } from "./style";
 import { StylesButton } from "../../styles/button";
 import { useNavigate } from "react-router-dom";
-import { Input } from "../../components/input";
+import { Input } from "../../src/components/input";
 import { api } from "../../src/services/api";
 import { useForm } from "react-hook-form";
 
