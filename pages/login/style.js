@@ -69,6 +69,7 @@ export const StyledSection = styled.section`
     gap: 10.15px;
     width: 100%;
     height: 48px;
+    color:white
   }
 
   input:hover {

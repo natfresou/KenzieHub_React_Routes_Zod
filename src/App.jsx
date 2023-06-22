@@ -3,11 +3,13 @@ import { GlobalStyles } from "../styles/globalStyles";
 import { GlobalReset } from "../styles/reset";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { UserProvider } from "./providers/UserContext";
 
 function App() {
   return (
     <>
-      <ToastContainer
+    < UserProvider>
+    <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -23,6 +25,8 @@ function App() {
       <RoutesMain />
       <GlobalReset />
       <GlobalStyles />
+    </UserProvider>
+    
     </>
   );
 }

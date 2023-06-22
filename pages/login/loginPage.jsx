@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+
 import Logo from "../../src/assets/img/Logo.svg";
 import {
   StyledHeading1,
@@ -9,26 +9,16 @@ import { StyledSection } from "./style";
 import { StylesButton } from "../../styles/button";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../src/components/input";
-import { api } from "../../src/services/api";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { UserContext } from "../../src/providers/UserContext";
 
-export const LoginPage = ({ setUser }) => {
+export const LoginPage = () => {
   const navigate = useNavigate();
 
   const { register, handleSubmit, reset } = useForm();
 
-  const loginUser = async (dat) => {
-    try {
-      const { data } = await api.post("/sessions", dat);
-      setUser(data.user);
-      toast.error("Login realizado com sucesso");
-      localStorage.setItem("@TOKEN", JSON.stringify(data.token));
-      localStorage.setItem("@USERID", JSON.stringify(data.user.id));
-      navigate("/home");
-    } catch (error) {
-      toast.error("Erro no Login, tente novamente.");
-    }
-  };
+  const { loginUser } = useContext(UserContext);
 
   const submit = async (formData) => {
     await loginUser(formData);

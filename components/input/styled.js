@@ -15,5 +15,6 @@ export const StyledDiv = styled.div`
     gap: 5px;
     width: 100%;
     height: 48px;
+    color:white;
   }
 `;

@@ -1,17 +1,20 @@
-import { toast } from "react-toastify";
-import Logo from "../../src/assets/img/Logo.svg";
+
 import { StyledHeading1, StyledHeading2 } from "../../styles/typography";
 import { StyledSection } from "./style";
 import { StylesButton } from "../../styles/button";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Input, Select } from "../../src/components/input/index"
-import { api } from "../../src/services/api";
 import { formRegraZod } from "../../src/components/formZod/formZod"
 import { zodResolver } from "@hookform/resolvers/zod";
+import { UserContext } from "../../src/providers/UserContext";
+import { useContext, useState } from "react";
+import Logo from "../../src/assets/img/Logo.svg";
 
-export const RegisterPage = ({ setUsersList }) => {
+export const RegisterPage = () => {
   const navigate = useNavigate();
+  const { setUsersList,creatNewUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(false)
 
   const {
     register,
@@ -22,20 +25,11 @@ export const RegisterPage = ({ setUsersList }) => {
     resolver: zodResolver(formRegraZod),
   });
 
-  const creatNewUser = async (data) => {
-    try {
-      const response = await api.post("/users", data);
-      toast.error("Cadastro realizado com sucesso");
-      setUsersList((userList) => [...userList, response.data]);
-      navigate("/");
-    } catch (error) {
-      toast.error("Erro no Cadastro, tente novamente.");
-    }
-  };
+
 
   const submit = async (formData) => {
     const { currentPassword, ...data } = formData;
-    await creatNewUser(data);
+    await creatNewUser(data, setLoading);
     reset();
   };
 
@@ -119,8 +113,8 @@ export const RegisterPage = ({ setUsersList }) => {
               {errors.course_module ? (
                 <p>{errors.course_module.message}</p>
               ) : null}
-              <StylesButton type="submit" buttonBackgraund="cadastro">
-                Cadastrar
+              <StylesButton type="submit" buttonBackgraund="cadastro" disable={loading}>
+                {loading? 'Cadastrando...' : 'Cadastrar'}
               </StylesButton>
             </form>
           </div>
