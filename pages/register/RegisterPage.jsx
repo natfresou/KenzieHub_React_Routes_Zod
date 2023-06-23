@@ -2,7 +2,6 @@
 import { StyledHeading1, StyledHeading2 } from "../../styles/typography";
 import { StyledSection } from "./style";
 import { StylesButton } from "../../styles/button";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Input, Select } from "../../src/components/input/index"
 import { formRegraZod } from "../../src/components/formZod/formZod"
@@ -10,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../src/providers/UserContext";
 import { useContext, useState } from "react";
 import Logo from "../../src/assets/img/Logo.svg";
+import { useNavigate } from "react-router-dom";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();

@@ -13,8 +13,6 @@ import { UserContext } from "../../src/providers/UserContext";
 export const HomePage = () => {
   const { user,logaut } = useContext(UserContext);
 
-  const name = user.name;
-  const modulo = user.course_module;
  
   return (
     <StyledSection>
@@ -28,8 +26,8 @@ export const HomePage = () => {
         <div className="div_caixa">
           <div className="div_olaContainner">
             <div className="div_ola">
-              <StyledHeading1> Olá, {name}</StyledHeading1>
-              <StyledHeading2>{modulo}</StyledHeading2>
+              <StyledHeading1> Olá, {user?.name}</StyledHeading1>
+              <StyledHeading2>{user?.course_module}</StyledHeading2>
             </div>
           </div>
 

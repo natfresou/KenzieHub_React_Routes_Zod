@@ -7,19 +7,43 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [usersList, setUsersList] = useState([]);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
+
+  const currentPath = window.location.pathname;
+  console.log(currentPath)
 
   const navigate = useNavigate();
 
+
   useEffect(() => {
-    async function loadData() {
+    const token = JSON.parse(localStorage.getItem("@TOKEN"));
+    const loadUser = async () => {
+      try {
+        const response = await api.get("/profile", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        console.log(response);
+        setUser(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (token) {
+      loadUser();
+    }
+  }, []);
+
+  useEffect(() => {
+    const loadData = async () => {
       try {
         const response = await api.get("/users");
         setUsersList(response.data);
       } catch (error) {
         console.log(error);
       }
-    }
+    };
     loadData();
   }, []);
 
@@ -37,8 +61,9 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-  const loginUser = async (dat) => {
+  const loginUser = async (dat, setLoading) => {
     try {
+      setLoading(true);
       const { data } = await api.post("/sessions", dat);
       setUser(data.user);
       toast.success("Login realizado com sucesso");
@@ -47,6 +72,8 @@ export const UserProvider = ({ children }) => {
       navigate("/home");
     } catch (error) {
       toast.error("Erro no Login, tente novamente.");
+    } finally {
+      setLoading(false);
     }
   };
 

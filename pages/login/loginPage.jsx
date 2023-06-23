@@ -10,10 +10,13 @@ import { StylesButton } from "../../styles/button";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../src/components/input";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../src/providers/UserContext";
 
 export const LoginPage = () => {
+
+  const [loading, setLoading] = useState(false)
+
   const navigate = useNavigate();
 
   const { register, handleSubmit, reset } = useForm();
@@ -21,7 +24,7 @@ export const LoginPage = () => {
   const { loginUser } = useContext(UserContext);
 
   const submit = async (formData) => {
-    await loginUser(formData);
+    await loginUser(formData, setLoading);
     reset();
   };
 
@@ -49,8 +52,8 @@ export const LoginPage = () => {
                 placeholder="Digite sua senha"
                 required
               />
-              <StylesButton type="submit" buttonBackgraund="pink">
-                Entrar
+              <StylesButton type="submit" buttonBackgraund="pink" disable={loading}>
+              {loading? 'Entrando...' : 'Entrar'}
               </StylesButton>
               <div className="div_p">
                 <Styledbody>Ainda não possui uma conta?</Styledbody>
