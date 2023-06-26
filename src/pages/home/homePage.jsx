@@ -1,13 +1,13 @@
-import Logo from "../../src/assets/img/Logo.svg";
+import Logo from "../../assets/img/Logo.svg";
 import {
   StyledHeading,
   StyledHeading1,
   StyledHeading2
-} from "../../styles/typography";
+} from "../../../styles/typography";
 import { StyledSection } from "./style";
-import { StylesButton } from "../../styles/button";
+import { StylesButton } from "../../../styles/button";
 import { useContext } from "react";
-import { UserContext } from "../../src/providers/UserContext";
+import { UserContext } from "../../../src/providers/UserContext";
 
 
 export const HomePage = () => {

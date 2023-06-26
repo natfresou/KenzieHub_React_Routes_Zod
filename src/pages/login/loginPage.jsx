@@ -1,17 +1,17 @@
 
-import Logo from "../../src/assets/img/Logo.svg";
+import Logo from "../../../src/assets/img/Logo.svg";
 import {
   StyledHeading1,
   StyledHeading2,
   Styledbody,
-} from "../../styles/typography";
+} from "../../../styles/typography";
 import { StyledSection } from "./style";
-import { StylesButton } from "../../styles/button";
+import { StylesButton } from "../../../styles/button";
 import { useNavigate } from "react-router-dom";
-import { Input } from "../../src/components/input";
+import { Input } from "../../../src/components/input";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
-import { UserContext } from "../../src/providers/UserContext";
+import { UserContext } from "../../../src/providers/UserContext";
 
 export const LoginPage = () => {
 

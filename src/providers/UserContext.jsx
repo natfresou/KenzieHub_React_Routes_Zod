@@ -80,7 +80,7 @@ export const UserProvider = ({ children }) => {
   const logaut = () => {
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@USERID");
-    setUser([]);
+    setUser(null);
     navigate("/");
   };
 
