@@ -4,7 +4,7 @@ export const StyledSection = styled.section`
   width: 100%;
   height: 100vh;
   padding: 1rem;
-  background: #000000;
+  background: #121214;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -14,7 +14,7 @@ export const StyledSection = styled.section`
 
   header {
     width: 100%;
-    max-width:1000px;
+    max-width: 1000px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,7 +26,7 @@ export const StyledSection = styled.section`
     height: 500px;
     width: 100%;
     padding: 1rem;
-    background: #000000;
+    background: #121214;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,12 +52,12 @@ export const StyledSection = styled.section`
     }
   }
 
- .div_olaContainner{
-  border-top: 2px solid #212529;
+  .div_olaContainner {
+    border-top: 2px solid #212529;
     border-bottom: 2px solid #212529;
     width: 100%;
     height: 100px;
- }
+  }
   .div_ola {
     display: flex;
     flex-direction: row;
@@ -67,7 +67,6 @@ export const StyledSection = styled.section`
     height: 80px;
     gap: 1.5rem;
     width: 100%;
-
   }
   form {
     display: flex;
@@ -102,9 +101,24 @@ export const StyledSection = styled.section`
     border: 1.2182px solid #f8f9fa;
   }
 
-  .sorryMsg {
+  .tecnologias_containner {
     margin-top: 3rem;
     width: 100%;
     max-width: 1000px;
+  }
+  .tecnologias_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .tecnologias_headerPlus {
+    height: 25px;
+    width: 25px;
+    background-color: #212529;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 `;

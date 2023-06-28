@@ -1,4 +1,3 @@
-
 import Logo from "../../../src/assets/img/Logo.svg";
 import {
   StyledHeading1,
@@ -14,8 +13,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../../src/providers/UserContext";
 
 export const LoginPage = () => {
-
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -43,22 +41,25 @@ export const LoginPage = () => {
                 type="email"
                 register={register("email")}
                 placeholder="Digite seu email"
-                required
               />
               <StyledHeading2>Senha</StyledHeading2>
               <Input
                 type="password"
                 register={register("password")}
                 placeholder="Digite sua senha"
-                required
               />
-              <StylesButton type="submit" buttonBackgraund="pink" disable={loading}>
-              {loading? 'Entrando...' : 'Entrar'}
+              <StylesButton
+                type="submit"
+                buttonBackgraund="pink"
+                disable={loading}
+              >
+                {loading ? "Entrando..." : "Entrar"}
               </StylesButton>
               <div className="div_p">
                 <Styledbody>Ainda não possui uma conta?</Styledbody>
               </div>
               <StylesButton
+              type="button"
                 onClick={() => navigate("/register")}
                 buttonBackgraund="gray"
               >

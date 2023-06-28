@@ -81,7 +81,7 @@ export const StyledSection = styled.section`
   }
 
   input {
- color:white;
+    color: white;
   }
   input:hover {
     border: 1.2182px solid #f8f9fa;

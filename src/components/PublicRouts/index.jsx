@@ -3,6 +3,6 @@ import { UserContext } from "../../providers/UserContext";
 import { useContext } from "react";
 
 export const PublicRoutes = () => {
-    const {user} = useContext(UserContext);
-    return !user ? <Outlet/> :  <Navigate to="/home" />
-}
+  const { user } = useContext(UserContext);
+  return !user ? <Outlet /> : <Navigate to="/home" />;
+};

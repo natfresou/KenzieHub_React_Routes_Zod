@@ -8,43 +8,34 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
   const [usersList, setUsersList] = useState([]);
   const [user, setUser] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const currentPath = window.location.pathname;
-  console.log(currentPath)
 
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("@TOKEN"));
     const loadUser = async () => {
       try {
-        const response = await api.get("/profile", {
+        setLoading(true);
+        const { data } = await api.get("/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response);
-        setUser(response.data);
+        setUser(data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     if (token) {
       loadUser();
     }
-  }, []);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await api.get("/users");
-        setUsersList(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    loadData();
   }, []);
 
   const creatNewUser = async (data, setLoading) => {
@@ -86,7 +77,18 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, setUsersList, logaut, loginUser, creatNewUser }}
+      value={{
+        user,
+        setUser,
+        setUsersList,
+        logaut,
+        loginUser,
+        creatNewUser,
+        isOpen,
+        setIsOpen,
+        isOpenModal,
+        setIsOpenModal,
+      }}
     >
       {children}
     </UserContext.Provider>

@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
@@ -69,7 +68,7 @@ export const StyledSection = styled.section`
     gap: 10.15px;
     width: 100%;
     height: 48px;
-    color:white
+    color: white;
   }
 
   input:hover {
@@ -81,4 +80,3 @@ export const StyledSection = styled.section`
     margin-bottom: 0.8rem;
   }
 `;
-
