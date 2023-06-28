@@ -48,7 +48,6 @@ export const ModalTechChange = () => {
     };
   }, []);
 
-  console.log(isDelChange);
   return (
     <StyledDiv>
       <div ref={modalChangeRef} role="dialog" className="modalContainner">

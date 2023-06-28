@@ -16,7 +16,6 @@ export const StyledDiv = styled.div`
     width: 100%;
     height: 350px;
     max-width: 370px;
-    border: 1px solid #f5f5f5;
     border-radius: 0px 0px 5px 5px;
     background-color: #212529;
   }
