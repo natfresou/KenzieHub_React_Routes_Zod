@@ -1,11 +1,11 @@
-import { LoginPage } from "../src/pages/login/loginPage";
-import { RegisterPage } from "../src/pages/register/RegisterPage";
-import { HomePage } from "../src/pages/home/homePage";
+import { LoginPage } from "../pages/login/loginPage";
+import { RegisterPage } from "../pages/register/RegisterPage";
+import { HomePage } from "../pages/home/homePage";
 
 import { Route, Routes } from "react-router-dom";
-import { ProtectRoutes } from "../src/components/ProtectedRoutes";
-import { PublicRoutes } from "../src/components/PublicRouts";
-import { TechProvider } from "../src/providers/TechContext";
+import { ProtectRoutes } from "../components/protectedRoutes";
+import { PublicRoutes } from "../components/publicRouts";
+import { TechProvider } from "../providers/TechContext";
 
 export const RoutesMain = () => {
   return (

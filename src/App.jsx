@@ -1,11 +1,11 @@
-import { RoutesMain } from "../routes/RoutesMain";
-import { GlobalStyles } from "../styles/globalStyles";
-import { GlobalReset } from "../styles/reset";
+import { RoutesMain } from "../src/routes/RoutesMain";
+import { GlobalStyles } from "../src/styles/globalStyles";
+import { GlobalReset } from "../src/styles/reset";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserProvider } from "./providers/UserContext";
 
-function App() {
+export const App = () => {
   return (
     <>
       <UserProvider>

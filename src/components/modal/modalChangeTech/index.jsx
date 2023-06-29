@@ -1,17 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { StyledDiv } from "./style";
-import { StyledHeading1 } from "../../../../styles/typography";
+import { StyledHeading1 } from "../../../styles/typography";
 import { useContext } from "react";
 import { UserContext } from "../../../providers/UserContext";
 import { useForm } from "react-hook-form";
 import { Input, Select } from "../../input";
 import { TechContext } from "../../../providers/TechContext";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { formRegraZodTechChange } from "../../formZod/formZod";
 
 export const ModalTechChange = () => {
   const { setIsOpenModal } = useContext(UserContext);
+
   const { isDelChange, deleteUserTech, upDateUserTech } =
     useContext(TechContext);
+
   const [valor, setValor] = useState("");
+
   const { register, handleSubmit, reset } = useForm({
     defaultValues: { status: isDelChange.status },
   });

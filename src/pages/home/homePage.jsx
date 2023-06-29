@@ -3,15 +3,15 @@ import {
   StyledHeading,
   StyledHeading1,
   StyledHeading2,
-} from "../../../styles/typography";
+} from "../../styles/typography";
 import { StyledSection } from "./style";
-import { StylesButton } from "../../../styles/button";
+import { StylesButton } from "../../styles/button";
 import { useContext } from "react";
 import { UserContext } from "../../../src/providers/UserContext";
-import { Modal } from "../../../src/components/modal/modalCastrar/index";
+import { Modal } from "../../components/modal/modalCastrarTech/index";
 import { TechContext } from "../../providers/TechContext";
-import { UserTech } from "../../components/tecnolog/tecnologList";
-import { ModalTechChange } from "../../components/modal/modalChange";
+import { UserTech } from "../../components/techSection/techList/index";
+import { ModalTechChange } from "../../components/modal/modalChangeTech";
 
 export const HomePage = () => {
   const { user, logaut } = useContext(UserContext);

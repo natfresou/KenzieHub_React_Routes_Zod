@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { StyledDiv } from "./style";
-import { StyledHeading1 } from "../../../../styles/typography";
+import { StyledHeading1 } from "../../../styles/typography";
 import { useContext } from "react";
 import { UserContext } from "../../../providers/UserContext";
 import { useForm } from "react-hook-form";

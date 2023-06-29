@@ -1,6 +1,6 @@
-import { StyledHeading1, StyledHeading2 } from "../../../styles/typography";
+import { StyledHeading1, StyledHeading2 } from "../../styles/typography";
 import { StyledSection } from "./style";
-import { StylesButton } from "../../../styles/button";
+import { StylesButton } from "../../styles/button";
 import { useForm } from "react-hook-form";
 import { Input, Select } from "../../../src/components/input/index";
 import { formRegraZod } from "../../../src/components/formZod/formZod";

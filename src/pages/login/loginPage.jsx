@@ -3,21 +3,30 @@ import {
   StyledHeading1,
   StyledHeading2,
   Styledbody,
-} from "../../../styles/typography";
+} from "../../styles/typography";
 import { StyledSection } from "./style";
-import { StylesButton } from "../../../styles/button";
+import { StylesButton } from "../../styles/button";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../../src/components/input";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../src/providers/UserContext";
+import { formRegraZodLogin } from "../../components/formZod/formZod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const LoginPage = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(formRegraZodLogin),
+  });
 
   const { loginUser } = useContext(UserContext);
 
@@ -42,12 +51,14 @@ export const LoginPage = () => {
                 register={register("email")}
                 placeholder="Digite seu email"
               />
+              {errors.email ? <p>{errors.email.message}</p> : null}
               <StyledHeading2>Senha</StyledHeading2>
               <Input
                 type="password"
                 register={register("password")}
                 placeholder="Digite sua senha"
               />
+              {errors.password ? <p>{errors.password.message}</p> : null}
               <StylesButton
                 type="submit"
                 buttonBackgraund="pink"

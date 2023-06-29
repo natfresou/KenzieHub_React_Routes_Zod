@@ -12,7 +12,7 @@ export const StyledSection = styled.section`
 
   .containner {
     max-width: 400px;
-    height: 500px;
+    max-height: 600px;
     width: 100%;
     padding: 1rem;
     background: #000000;

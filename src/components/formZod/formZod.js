@@ -28,3 +28,16 @@ export const formRegraZod = z
     message: "A confirmação e a senha precisão corresponder",
     path: ["currentPassword"],
   });
+
+export const formRegraZodLogin = z.object({
+  email: z
+    .string()
+    .min(1, "O campo é obrigatório")
+    .email("Forneça um email válido."),
+  password: z.string().min(6, " O campo é obrigatório."),
+});
+
+export const formRegraZodTechChange = z.object({
+  status: z.string().min(1, "O campo é obrigatório"),
+  title: z.string().min(1, "O campo é obrigatório"),
+});
