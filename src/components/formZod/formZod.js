@@ -37,7 +37,7 @@ export const formRegraZodLogin = z.object({
   password: z.string().min(6, " O campo é obrigatório."),
 });
 
-export const formRegraZodTechChange = z.object({
+export const formRegraZodNewTech = z.object({
   status: z.string().min(1, "O campo é obrigatório"),
   title: z.string().min(1, "O campo é obrigatório"),
 });

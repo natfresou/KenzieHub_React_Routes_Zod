@@ -14,7 +14,7 @@ export const StyledDiv = styled.div`
   .modalContainner {
     position: absolute;
     width: 100%;
-    height: 350px;
+    max-height: 400px;
     max-width: 370px;
     border-radius: 0px 0px 5px 5px;
     background-color: #212529;
@@ -66,6 +66,14 @@ export const StyledDiv = styled.div`
     margin-bottom: 1rem;
     color: #868e96;
   }
+  h5{
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color:yellow;
+  }
+
+
   select {
     background: #343b41;
     border: 1.2182px solid #343b41;
@@ -92,4 +100,6 @@ export const StyledDiv = styled.div`
   input:hover {
     border: 1.2182px solid #f8f9fa;
   }
+
 `;
+

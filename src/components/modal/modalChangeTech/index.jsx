@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import { Input, Select } from "../../input";
 import { TechContext } from "../../../providers/TechContext";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { formRegraZodTechChange } from "../../formZod/formZod";
 
 export const ModalTechChange = () => {
   const { setIsOpenModal } = useContext(UserContext);

@@ -26,6 +26,10 @@ export const StyledSection = styled.section`
       margin-bottom: 16px;
     }
   }
+
+  h5 {
+    color: yellow;
+  }
   .div_form {
     display: flex;
     flex-direction: column;

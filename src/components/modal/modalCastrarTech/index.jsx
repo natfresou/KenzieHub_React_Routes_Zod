@@ -6,11 +6,21 @@ import { UserContext } from "../../../providers/UserContext";
 import { useForm } from "react-hook-form";
 import { Input, Select } from "../../input";
 import { TechContext } from "../../../providers/TechContext";
+import { formRegraZodNewTech } from "../../formZod/formZod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const Modal = () => {
   const { setIsOpen } = useContext(UserContext);
   const { newTech } = useContext(TechContext);
-  const { register, handleSubmit, reset } = useForm();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(formRegraZodNewTech),
+  });
 
   const modalRef = useRef(null);
   const buttonModalRef = useRef(null);
@@ -59,12 +69,14 @@ export const Modal = () => {
           <form onSubmit={handleSubmit(submit)}>
             <p>Nome</p>
             <Input type="text" register={register("title")} />
+            {errors.title ? <h5>{errors.title.message}</h5> : null}
             <p>Selecionar status</p>
             <Select register={register("status")}>
               <option value="Iniciante">Iniciante</option>
               <option value="Intermediário">Intermediário</option>
               <option value="Avançado">Avançado</option>
             </Select>
+            {errors.status ? <h5>{errors.status.message}</h5> : null}
             <button ref={buttonModalRef} type="submit">
               Cadastrar Tecnologias
             </button>

@@ -51,14 +51,14 @@ export const LoginPage = () => {
                 register={register("email")}
                 placeholder="Digite seu email"
               />
-              {errors.email ? <p>{errors.email.message}</p> : null}
+              {errors.email ? <h5>{errors.email.message}</h5> : null}
               <StyledHeading2>Senha</StyledHeading2>
               <Input
                 type="password"
                 register={register("password")}
                 placeholder="Digite sua senha"
               />
-              {errors.password ? <p>{errors.password.message}</p> : null}
+              {errors.password ? <h5>{errors.password.message}</h5> : null}
               <StylesButton
                 type="submit"
                 buttonBackgraund="pink"

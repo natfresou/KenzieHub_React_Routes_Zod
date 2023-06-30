@@ -53,21 +53,21 @@ export const RegisterPage = () => {
                 register={register("name")}
                 placeholder="Digite aqui seu nome"
               />
-              {errors.name ? <p>{errors.name.message}</p> : null}
+              {errors.name ? <h5>{errors.name.message}</h5> : null}
               <StyledHeading2>Email</StyledHeading2>
               <Input
                 type="email"
                 register={register("email")}
                 placeholder="Digite aqui seu email"
               />
-              {errors.email ? <p>{errors.email.message}</p> : null}
+              {errors.email ? <h5>{errors.email.message}</h5> : null}
               <StyledHeading2>Senha</StyledHeading2>
               <Input
                 type="password"
                 register={register("password")}
                 placeholder="Digite aqui sua senha"
               />
-              {errors.password ? <p>{errors.password.message}</p> : null}
+              {errors.password ? <h5>{errors.password.message}</h5> : null}
               <StyledHeading2>Confirmar Senha</StyledHeading2>
               <Input
                 type="password"
@@ -75,7 +75,7 @@ export const RegisterPage = () => {
                 placeholder="Digite novamente sua senha"
               />
               {errors.currentPassword ? (
-                <p>{errors.currentPassword.message}</p>
+                <h5>{errors.currentPassword.message}</h5>
               ) : null}
               <StyledHeading2>Bio</StyledHeading2>
               <Input
@@ -83,14 +83,14 @@ export const RegisterPage = () => {
                 register={register("bio")}
                 placeholder="Fale sobre você"
               />
-              {errors.bio ? <p>{errors.bio.message}</p> : null}
+              {errors.bio ? <h5>{errors.bio.message}</h5> : null}
               <StyledHeading2>Contato</StyledHeading2>
               <Input
                 type="text"
                 register={register("contact")}
                 placeholder="Opção de contato"
               />
-              {errors.contact ? <p>{errors.contact.message}</p> : null}
+              {errors.contact ? <h5>{errors.contact.message}</h5> : null}
               <StyledHeading2>Selecionar módulo</StyledHeading2>
               <Select register={register("course_module")} required>
                 <option>Escolher opção</option>
@@ -108,7 +108,7 @@ export const RegisterPage = () => {
                 </option>
               </Select>
               {errors.course_module ? (
-                <p>{errors.course_module.message}</p>
+                <h5>{errors.course_module.message}</h5>
               ) : null}
               <StylesButton
                 type="submit"

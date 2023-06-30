@@ -22,7 +22,9 @@ export const StyledSection = styled.section`
     margin-bottom: 1.5rem;
     margin-top: 3rem;
   }
-
+  h5 {
+    color: yellow;
+  }
   .containner {
     max-width: 400px;
     max-height: 1000px;
@@ -34,6 +36,7 @@ export const StyledSection = styled.section`
     justify-content: center;
     align-items: center;
     color: #f8f9fa;
+    margin-bottom:1rem;
 
     img {
       margin-bottom: 16px;
